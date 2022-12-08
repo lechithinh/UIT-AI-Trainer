@@ -109,7 +109,7 @@ class Login(Toplevel):
             85.0,
             77.0,
             anchor="nw",
-            text="HotinGo",
+            text="UIT TRAINER",
             fill="#FFFFFF",
             font=("Montserrat Bold", 50 * -1),
         )
@@ -161,7 +161,7 @@ class Login(Toplevel):
             90.0,
             431.0,
             anchor="nw",
-            text="© Mohit & Anirudh, 2021",
+            text="© CS TEAM, 2022",
             fill="#FFFFFF",
             font=("Montserrat Bold", 18 * -1),
         )
@@ -173,7 +173,7 @@ class Login(Toplevel):
             90.0,
             150.0,
             anchor="nw",
-            text="Hotingo is a Hotel",
+            text="The application is designed",
             fill="#FFFFFF",
             font=("Montserrat Regular", 18 * -1),
         )
@@ -182,7 +182,7 @@ class Login(Toplevel):
             90.0,
             179.0,
             anchor="nw",
-            text="Management system that",
+            text="to support and encourage",
             fill="#FFFFFF",
             font=("Montserrat Regular", 18 * -1),
         )
@@ -191,7 +191,7 @@ class Login(Toplevel):
             90.0,
             208.0,
             anchor="nw",
-            text="allows you to manage guests,",
+            text="UIT students to do more exercises",
             fill="#FFFFFF",
             font=("Montserrat Regular", 18 * -1),
         )
@@ -200,7 +200,7 @@ class Login(Toplevel):
             90.0,
             237.0,
             anchor="nw",
-            text="room, and reservations using",
+            text="and to join in more sporty activities",
             fill="#FFFFFF",
             font=("Montserrat Regular", 18 * -1),
         )
@@ -209,7 +209,7 @@ class Login(Toplevel):
             90.0,
             266.0,
             anchor="nw",
-            text="a well-engineered solution.",
+            text="using a well-engineered solution.",
             fill="#FFFFFF",
             font=("Montserrat Regular", 18 * -1),
         )

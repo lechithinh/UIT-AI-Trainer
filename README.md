@@ -39,7 +39,7 @@ Open terminal/cmd/powershell and change directory/folder to the cloned folder. [
 The command for the same would be
 
 ```sh
-cd Location\ To/Hotingo
+cd Location\ To/UIT-AI-Trainer
 ```
 
 ### 3: Install the PIP packages/dependencies
@@ -47,7 +47,7 @@ cd Location\ To/Hotingo
 After you cd into the repo folder, ensure you see the following cmd/terminal prompt
 
 ```sh
-Something.../HotinGo $
+Something.../UIT-AI-Trainer $
 ```
 
 If not, repeat the previous step.

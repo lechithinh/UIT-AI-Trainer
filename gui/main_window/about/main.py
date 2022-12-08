@@ -37,7 +37,7 @@ class About(Frame):
             36.0,
             43.0,
             anchor="nw",
-            text="HotinGo was created by",
+            text="UIT TRAINER was created by",
             fill="#5E95FF",
             font=("Montserrat Bold", 26 * -1),
         )
@@ -55,7 +55,7 @@ class About(Frame):
             56.0,
             121.0,
             anchor="nw",
-            text="Tinkerer",
+            text="Leader",
             fill="#777777",
             font=("Montserrat Medium", 15 * -1),
         )
@@ -64,7 +64,7 @@ class About(Frame):
             418.0,
             121.0,
             anchor="nw",
-            text="SW-Fan",
+            text="Supporter",
             fill="#777777",
             font=("Montserrat Medium", 15 * -1),
         )
@@ -73,7 +73,7 @@ class About(Frame):
             56.0,
             138.0,
             anchor="nw",
-            text="Mohit",
+            text="Thinh",
             fill="#5E95FF",
             font=("Montserrat Bold", 26 * -1),
         )
@@ -82,7 +82,7 @@ class About(Frame):
             418.0,
             138.0,
             anchor="nw",
-            text="Anirudh",
+            text="Thinh",
             fill="#5E95FF",
             font=("Montserrat Bold", 26 * -1),
         )
@@ -91,7 +91,7 @@ class About(Frame):
             56.0,
             170.0,
             anchor="nw",
-            text="Yadav",
+            text="Chi Le",
             fill="#5E95FF",
             font=("Montserrat Bold", 18 * -1),
         )
@@ -100,7 +100,7 @@ class About(Frame):
             418.0,
             170.0,
             anchor="nw",
-            text="Agarwal",
+            text="Chi Le",
             fill="#5E95FF",
             font=("Montserrat Bold", 18 * -1),
         )
@@ -120,10 +120,10 @@ class About(Frame):
         image_5 = self.canvas.create_image(669.0, 151.0, image=self.image_image_5)
 
         self.canvas.create_text(
-            197.0,
+            250.0,
             352.0,
             anchor="nw",
-            text="© 2021-22 Mohit and Anirudh, All rights reserved",
+            text="© 2021-22 CS TEAM, All rights reserved",
             fill="#5E95FF",
             font=("Montserrat Bold", 16 * -1),
         )
@@ -150,7 +150,7 @@ class About(Frame):
             418.0,
             223.0,
             anchor="nw",
-            text="Anirudh likes to kill his time in a world of",
+            text="Thinh likes to kill his time in a world of",
             fill="#777777",
             font=("Montserrat Medium", 13 * -1),
         )
@@ -195,7 +195,7 @@ class About(Frame):
             56.0,
             223.0,
             anchor="nw",
-            text="passionate learner, Mohit likes to bring",
+            text="passionate learner, Thinh likes to bring",
             fill="#777777",
             font=("Montserrat Medium", 13 * -1),
         )
