@@ -1,14 +1,3 @@
-<div id="top"></div>
-
-<!-- PROJECT SHIELDS -->
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Last Commit][last-commit-shield]][last-commit-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-
 
 <!-- GETTING STARTED -->
 
@@ -40,7 +29,7 @@ Find instructions for [cloning/downloading this repo here](https://docs.github.c
 Or if you have git command line installed, clone using this command:
 
 ```sh
-git clone https://github.com/Just-Moh-it/HotinGo.git
+git clone https://github.com/lechithinh/UIT-AI-Trainer
 ```
 
 ### 2: Cd to the folder
