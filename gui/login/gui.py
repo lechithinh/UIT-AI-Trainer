@@ -1,9 +1,9 @@
 from pathlib import Path
 
-from tkinter import Toplevel, Tk, Canvas, Entry, Text, Button, PhotoImage, messagebox
+from tkinter import Toplevel, Tk, Canvas, Entry, Text, Button, PhotoImage, messagebox, Frame
 from controller import *
 from ..main_window.main import mainWindow
-
+from gui.login.FaceLogin.main import LoginByFace
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 
@@ -32,6 +32,23 @@ class Login(Toplevel):
                 title="Invalid Credentials",
                 message="The username and self.password don't match",
             )
+            
+    def handle_btn_press(self, caller, name):
+        # Place the sidebar on respective button
+        self.sidebar_indicator.place(x=0, y=caller.winfo_y())
+
+        # Hide all screens
+        for window in self.windows.values():
+            window.place_forget()
+
+        # Set ucrrent Window
+        self.current_window = self.windows.get(name)
+
+        # Show the screen of the button pressed - where to display each frame
+        self.windows[name].place(x=529.0, y=0, width=1012.0, height=506.0)
+        # Handle label change
+        current_name = self.windows.get(name)._name.split("!")[-1].capitalize()
+        self.canvas.itemconfigure(self.heading, text=current_name)
 
     def __init__(self, *args, **kwargs):
 
@@ -41,6 +58,11 @@ class Login(Toplevel):
 
         self.geometry("1012x506")
         self.configure(bg="#5E95FF")
+        
+        #FACE LONGIN INDICATOR
+        self.sidebar_indicator = Frame(self, background="#FFFFFF")
+        self.sidebar_indicator.place(x=0, y=133, height=47, width=7)
+
 
         self.canvas = Canvas(
             self,
@@ -55,6 +77,16 @@ class Login(Toplevel):
         self.canvas.place(x=0, y=0)
         self.canvas.create_rectangle(
             469.0, 0.0, 1012.0, 506.0, fill="#FFFFFF", outline=""
+        )
+        
+        #curent name forr pressbuton functions
+        self.heading = self.canvas.create_text(
+            255.0,
+            33.0,
+            anchor="nw",
+            text="face login ne",
+            fill="#5E95FF",
+            font=("Montserrat Bold", 26 * -1),
         )
 
         entry_image_1 = PhotoImage(file=relative_to_assets("entry_1.png"))
@@ -104,7 +136,28 @@ class Login(Toplevel):
             relief="flat",
         )
         button_1.place(x=641.0, y=412.0, width=190.0, height=48.0)
+        
+                
+        #FACE LOGIN TO FRAME
+        face_login = PhotoImage(file=relative_to_assets("button_1.png"))
+        self.facelogin_btn = Button(
+            self.canvas,
+            image=face_login,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: self.handle_btn_press(self.facelogin_btn, "face"),
+            cursor='hand2', activebackground="#5E95FF",
+            relief="flat",
+        )
+        self.facelogin_btn.place(x=810.0, y=20.0, width=190.0, height=48.0)
 
+        # Loop through windows and place them
+        self.windows = {
+            "face": LoginByFace(self),
+            
+        }
+        # ============================
+        
         self.canvas.create_text(
             85.0,
             77.0,
@@ -230,7 +283,7 @@ class Login(Toplevel):
             text="yourself...",
             fill="#FFFFFF",
             font=("Montserrat Regular", 18 * -1),
-        )
+        )        
 
         # Bind enter to form submit
         self.username.bind("<Return>", lambda x: self.loginFunc())

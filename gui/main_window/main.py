@@ -34,7 +34,7 @@ class MainWindow(Toplevel):
     def __init__(self, *args, **kwargs):
         Toplevel.__init__(self, *args, **kwargs)
 
-        self.title("HotinGo - The state of art HMS")
+        self.title("UIT Trainer - The state of art")
 
         self.geometry("1012x506")
         self.configure(bg="#5E95FF")
@@ -63,6 +63,7 @@ class MainWindow(Toplevel):
 
         self.sidebar_indicator.place(x=0, y=133, height=47, width=7)
 
+        #DashBoard
         button_image_1 = PhotoImage(file=relative_to_assets("button_1.png"))
         self.dashboard_btn = Button(
             self.canvas,
@@ -75,6 +76,7 @@ class MainWindow(Toplevel):
         )
         self.dashboard_btn.place(x=7.0, y=133.0, width=208.0, height=47.0)
 
+        #Rooms
         button_image_2 = PhotoImage(file=relative_to_assets("button_2.png"))
         self.rooms_btn = Button(
             self.canvas,
@@ -87,6 +89,7 @@ class MainWindow(Toplevel):
         )
         self.rooms_btn.place(x=7.0, y=183.0, width=208.0, height=47.0)
 
+        #Guests
         button_image_3 = PhotoImage(file=relative_to_assets("button_3.png"))
         self.guests_btn = Button(
             self.canvas,
@@ -99,6 +102,7 @@ class MainWindow(Toplevel):
         )
         self.guests_btn.place(x=7.0, y=283.0, width=208.0, height=47.0)
 
+        #About
         button_image_4 = PhotoImage(file=relative_to_assets("button_4.png"))
         self.about_btn = Button(
             self.canvas,
@@ -111,6 +115,7 @@ class MainWindow(Toplevel):
         )
         self.about_btn.place(x=7.0, y=333.0, width=208.0, height=47.0)
 
+        #logout
         button_image_5 = PhotoImage(file=relative_to_assets("button_5.png"))
         self.logout_btn = Button(
             self.canvas,
@@ -122,6 +127,7 @@ class MainWindow(Toplevel):
         )
         self.logout_btn.place(x=0.0, y=441.0, width=215.0, height=47.0)
 
+        #Reservations
         button_image_6 = PhotoImage(file=relative_to_assets("button_6.png"))
         self.reservations_btn = Button(
             self.canvas,
@@ -147,7 +153,7 @@ class MainWindow(Toplevel):
             28.0,
             21.0,
             anchor="nw",
-            text="HotinGo",
+            text="TRAINER",
             fill="#FFFFFF",
             font=("Montserrat Bold", 36 * -1),
         )
@@ -220,7 +226,7 @@ class MainWindow(Toplevel):
         # Set ucrrent Window
         self.current_window = self.windows.get(name)
 
-        # Show the screen of the button pressed
+        # Show the screen of the button pressed - where to display each frame
         self.windows[name].place(x=215, y=72, width=1013.0, height=506.0)
 
         # Handle label change
