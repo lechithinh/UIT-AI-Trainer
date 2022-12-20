@@ -54,7 +54,7 @@ class Login(Toplevel):
 
         Toplevel.__init__(self, *args, **kwargs)
 
-        self.title("Login - UIT AI Trainer")
+        self.title("Login - UITrainer")
 
         self.geometry("1012x506")
         self.configure(bg="#5E95FF")
@@ -62,6 +62,7 @@ class Login(Toplevel):
         #FACE LONGIN INDICATOR
         self.sidebar_indicator = Frame(self, background="#FFFFFF")
         self.sidebar_indicator.place(x=0, y=133, height=47, width=7)
+
 
 
         self.canvas = Canvas(
@@ -84,11 +85,12 @@ class Login(Toplevel):
             255.0,
             33.0,
             anchor="nw",
-            text="face login ne",
+            text="FaceLogin",
             fill="#5E95FF",
             font=("Montserrat Bold", 26 * -1),
         )
 
+        #LOGIN SESSSION
         entry_image_1 = PhotoImage(file=relative_to_assets("entry_1.png"))
         entry_bg_1 = self.canvas.create_image(736.0, 331.0, image=entry_image_1)
         entry_1 = Entry(self.canvas, bd=0, bg="#EFEFEF", highlightthickness=0)
@@ -119,57 +121,16 @@ class Login(Toplevel):
 
         self.canvas.create_text(
             553.0,
-            66.0,
+            38.0,
             anchor="nw",
             text="Enter your login details",
             fill="#5E95FF",
             font=("Montserrat Bold", 26 * -1),
         )
-
-        button_image_1 = PhotoImage(file=relative_to_assets("button_1.png"))
-        button_1 = Button(
-            self.canvas,
-            image=button_image_1,
-            borderwidth=0,
-            highlightthickness=0,
-            command=self.loginFunc,
-            relief="flat",
-        )
-        button_1.place(x=641.0, y=412.0, width=190.0, height=48.0)
         
-                
-        #FACE LOGIN TO FRAME
-        face_login = PhotoImage(file=relative_to_assets("button_1.png"))
-        self.facelogin_btn = Button(
-            self.canvas,
-            image=face_login,
-            borderwidth=0,
-            highlightthickness=0,
-            command=lambda: self.handle_btn_press(self.facelogin_btn, "face"),
-            cursor='hand2', activebackground="#5E95FF",
-            relief="flat",
-        )
-        self.facelogin_btn.place(x=810.0, y=20.0, width=190.0, height=48.0)
-
-        # Loop through windows and place them
-        self.windows = {
-            "face": LoginByFace(self),
-            
-        }
-        # ============================
-        
-        self.canvas.create_text(
-            85.0,
-            77.0,
-            anchor="nw",
-            text="UIT TRAINER",
-            fill="#FFFFFF",
-            font=("Montserrat Bold", 50 * -1),
-        )
-
         self.canvas.create_text(
             553.0,
-            109.0,
+            77.0,
             anchor="nw",
             text="Enter the credentials that the admin gave",
             fill="#CCCCCC",
@@ -178,13 +139,13 @@ class Login(Toplevel):
 
         self.canvas.create_text(
             553.0,
-            130.0,
+            98.0,
             anchor="nw",
             text="you while signing up for the program",
             fill="#CCCCCC",
             font=("Montserrat Bold", 16 * -1),
         )
-
+        
         entry_image_3 = PhotoImage(file=relative_to_assets("entry_3.png"))
         entry_bg_3 = self.canvas.create_image(736.0, 241.0, image=entry_image_3)
         self.username = Entry(
@@ -209,19 +170,62 @@ class Login(Toplevel):
             show="•",
         )
         self.password.place(x=573.0, y=330.0, width=326.0, height=22.0)
-
+        
         self.canvas.create_text(
-            90.0,
-            431.0,
+            791.0,
+            384.0,
             anchor="nw",
-            text="© CS TEAM, 2022",
-            fill="#FFFFFF",
-            font=("Montserrat Bold", 18 * -1),
+            text="Forget password?",
+            fill="#5E95FF",
+            font=("Montserrat SemiBold", 13 * -1)
         )
 
+        #STUDET ID LOGIN MODULE
+        button_image_1 = PhotoImage(file=relative_to_assets("button_1.png"))
+        button_1 = Button(
+            self.canvas,
+            image=button_image_1,
+            borderwidth=0,
+            highlightthickness=0,
+            command=self.loginFunc,
+            relief="flat",
+        )
+        button_1.place(x=631.0,y=423.0, width=190.0, height=48.0)
+        
+                
+        #FACE LOGIN MODULE
+        face_login = PhotoImage(file=relative_to_assets("button_2.png"))
+        self.facelogin_btn = Button(
+            self.canvas,
+            image=face_login,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: self.handle_btn_press(self.facelogin_btn, "face"),
+            cursor='hand2', activebackground="#5E95FF",
+            relief="flat",
+        )
+        self.facelogin_btn.place( x=553.0,y=137.0, width=130.625,height=33.0)
+        self.windows = {
+            "face": LoginByFace(self),
+        }
+        
+        #Logo and animation Image
         image_image_1 = PhotoImage(file=relative_to_assets("image_1.png"))
-        image_1 = self.canvas.create_image(458.0, 326.0, image=image_image_1)
-
+        image_1 = self.canvas.create_image(469.0, 289.0, image=image_image_1)
+        image_image_2 = PhotoImage(file=relative_to_assets("image_2.png"))
+        image_2 = self.canvas.create_image(38.0,41.0,image=image_image_2)
+        
+        
+        #Description
+        self.canvas.create_text(
+            85.0,
+            77.0,
+            anchor="nw",
+            text="UIT TRAINER",
+            fill="#FFFFFF",
+            font=("Montserrat Bold", 50 * -1),
+        )
+        
         self.canvas.create_text(
             90.0,
             150.0,
@@ -280,15 +284,24 @@ class Login(Toplevel):
             90.0,
             324.0,
             anchor="nw",
-            text="yourself...",
+            text="yourself and enjoy it!",
             fill="#FFFFFF",
             font=("Montserrat Regular", 18 * -1),
-        )        
+        )   
+        
+        
+        self.canvas.create_text(
+            90.0,
+            431.0,
+            anchor="nw",
+            text="© UIT & LCT, 2022",
+            fill="#FFFFFF",
+            font=("Montserrat Bold", 18 * -1),
+        )     
 
         # Bind enter to form submit
         self.username.bind("<Return>", lambda x: self.loginFunc())
         self.password.bind("<Return>", lambda x: self.loginFunc())
 
-        # Essentials
         self.resizable(False, False)
         self.mainloop()
